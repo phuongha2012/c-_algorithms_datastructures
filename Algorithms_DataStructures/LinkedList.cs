@@ -36,11 +36,37 @@ namespace Algorithms_DataStructures
         public void Append(int data)
         {
             LinkedListNode current = head;
+            if (head == null)
+            {
+                head = new LinkedListNode(data);
+                return;
+            }
             while (current.next != null)
             {
                 current = current.next;
             }
             current.next = new LinkedListNode(data);
+        }
+
+        public void DeleteWithValue(int data)
+        {
+            if (head == null) return;
+            if (head.data == data)
+            {
+                head = head.next;
+                return;
+            }
+
+            LinkedListNode current = head;
+            while (current.next != null)
+            {
+                if (current.next.data == data)
+                {
+                    current.next = current.next.next;
+                    return;
+                }
+                current = current.next;
+            }
         }
 
         public void PrintList()
