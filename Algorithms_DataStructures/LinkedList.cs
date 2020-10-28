@@ -25,12 +25,22 @@ namespace Algorithms_DataStructures
             }
         }
 
-        public void PrependNode(int data)
+        public void Prepend(int data)
         {
             LinkedListNode node = new LinkedListNode(data);
             node.next = head;
             head = node;
             count++;
+        }
+
+        public void Append(int data)
+        {
+            LinkedListNode current = head;
+            while (current.next != null)
+            {
+                current = current.next;
+            }
+            current.next = new LinkedListNode(data);
         }
 
         public void PrintList()
