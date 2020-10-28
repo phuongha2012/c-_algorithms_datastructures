@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Algorithms_DataStructures
 {
@@ -69,13 +70,29 @@ namespace Algorithms_DataStructures
             }
         }
 
-        public void PrintList()
+        public void Print()
         {
             LinkedListNode current = head;
             while (current != null)
             {
                 Console.WriteLine(current.data);
                 current = current.next;
+            }
+        }
+
+        public void PrintReverse()
+        {
+            Stack reversedList = new Stack();
+            LinkedListNode current = head;
+            while (current != null)
+            {
+                reversedList.Push(current.data);
+                current = current.next;
+            }
+
+            foreach(int number in reversedList)
+            {
+                Console.WriteLine(number);
             }
         }
     }
