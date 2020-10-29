@@ -95,5 +95,27 @@ namespace Algorithms_DataStructures
                 Console.WriteLine(number);
             }
         }
+
+        public void InsertToPosition(int data, int position)
+        {
+            LinkedListNode newNode = new LinkedListNode(data);
+
+            if (position == 0)
+            {
+                newNode.next = head;
+                head = newNode;
+            } else
+            {
+                LinkedListNode current = head;
+                for (var i = 0; i < position - 1; i++)
+                {
+                    current = current.next;
+                }
+                newNode.next = current.next;
+                current.next = newNode;
+            }
+        }
+
+
     }
 }

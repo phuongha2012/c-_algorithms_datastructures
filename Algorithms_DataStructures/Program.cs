@@ -11,7 +11,10 @@ namespace Algorithms_DataStructures
             linkedList.Prepend(7);
             linkedList.Prepend(2);
             linkedList.Prepend(9);
-            linkedList.Append(1);
+            //linkedList.Append(1);
+            //linkedList.PrintReverse();
+            linkedList.PrintReverse();
+            linkedList.InsertToPosition(3, 2);
             linkedList.PrintReverse();
         }
     }
